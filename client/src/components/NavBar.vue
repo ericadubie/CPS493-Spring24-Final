@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import { ref } from 'vue';
+
+let isActive = ref(false);
+function toggleMenu() {
+  isActive.value = !isActive.value;
+}
 
 </script>
 
@@ -9,14 +15,14 @@
             <img src="../assets/logo.svg" width="112" height="28">
             </a>
 
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <a role="button" @click="toggleMenu" :class="{ 'is-active': isActive }" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             </a>
         </div>
 
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" :class=" { 'is-active': isActive } " class="navbar-menu">
             <div class="navbar-start">
                 <a class="navbar-item">
                     My Activity
@@ -27,11 +33,11 @@
                 </a>
 
                 <a class="navbar-item">
-                    Friends Activity
+                    Friends
                 </a>
 
                 <a class="navbar-item">
-                    People Search
+                    Search
                 </a>
 
                 <div class="navbar-item has-dropdown is-hoverable">
