@@ -11,9 +11,10 @@ function toggleMenu() {
 <template>
     <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <a class="navbar-item" href="https://bulma.io">
-            <img src="../assets/logo.svg" width="112" height="28">
-            </a>
+            <RouterLink to="/" class="navbar-item"> 
+                <img src="../assets/logo.svg" width="112" height="28">
+            </RouterLink>
+            
 
             <a role="button" @click="toggleMenu" :class="{ 'is-active': isActive }" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
