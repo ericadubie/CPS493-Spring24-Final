@@ -3,9 +3,9 @@
         {
             "name": "John Doe",
             "username": "johndoe123",
-            "profilePic": "https://example.com/profiles/johndoe.jpg",
+            "profilePic": "https://picsum.photos/id/2/200",
             "title": "Mountain Adventure",
-            "pictureURL": "https://example.com/pictures/mountain_adventure.jpg",
+            "pictureURL": "https://picsum.photos/id/20/200/300",
             "location": "Rocky Mountains",
             "distance": "5.2",
             "duration": "3600"
@@ -13,9 +13,9 @@
         {
             "name": "Jane Smith",
             "username": "janesmith456",
-            "profilePic": "https://example.com/profiles/janesmith.jpg",
+            "profilePic": "https://picsum.photos//id/4/200",
             "title": "Sunset at the Beach",
-            "pictureURL": "https://example.com/pictures/beach_sunset.jpg",
+            "pictureURL": "https://picsum.photos/id/24/200/300",
             "location": "Malibu Beach",
             "distance": "1.5",
             "duration": "1800"
@@ -23,9 +23,9 @@
         {
             "name": "Alex Johnson",
             "username": "alexjohnson789",
-            "profilePic": "https://example.com/profiles/alexjohnson.jpg",
+            "profilePic": "https://picsum.photos/id/6/200",
             "title": "City Lights Tour",
-            "pictureURL": "https://example.com/pictures/city_lights.jpg",
+            "pictureURL": "https://picsum.photos/id/28/200/300",
             "location": "New York City",
             "distance": "3.0",
             "duration": "7200"
