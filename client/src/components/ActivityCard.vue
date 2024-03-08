@@ -8,8 +8,8 @@ const props = defineProps({
   title: String,
   pictureURL: String,
   location: String,
-  distance: Number,
-  duration: Number
+  distance: String,
+  duration: String
 })
 </script>
 
@@ -18,13 +18,13 @@ const props = defineProps({
   <article class="media">
     <div class="media-left">
       <figure class="image is-64x64">
-        <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+        <img :src="profilePic" alt="Image">
       </figure>
     </div>
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{name}}</strong> <small>@{{username}}</small> <small>31m</small>
+          <strong>{{ name }}</strong> <small>@{{username}}</small> <small>31m</small>
           <br>
           {{ title }} - {{ location }}
         </p>
