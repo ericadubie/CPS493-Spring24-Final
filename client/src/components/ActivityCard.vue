@@ -1,5 +1,12 @@
 <script setup lang="ts">
-import { defineProps, type DefineProps } from 'vue';
+import { defineProps, type DefineProps } from 'vue'
+import { ref } from 'vue'
+
+let isVisible = ref(true)
+
+function toggleVisiblity() {
+  isVisible.value = !isVisible.value
+}
 
 const props = defineProps({
   name: String,
@@ -14,7 +21,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="box">
+    <div class="box" v-show="isVisible">
   <article class="media">
     <div class="media-left">
       <figure class="image is-64x64">
@@ -63,6 +70,10 @@ const props = defineProps({
         </div>
       </nav>
     </div>
+    <div class="media-right">
+      <button @click="toggleVisiblity" class="delete"></button>
+    </div>
+
   </article>
 </div>
 </template>
