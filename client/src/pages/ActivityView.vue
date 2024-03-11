@@ -13,6 +13,40 @@ function toggleForm() {
     isVisible.value = !isVisible.value
 }
 
+const workout = ref({
+    title: "",
+    date: "",
+    duration: "",
+    location: "",
+    picture: "",
+    type: "",
+})
+
+function addWorkout() {
+    users.value.unshift({
+        name: "EXAMPLE",
+        username: "EXAMPLE",
+        profilePic: "EXAMPLE",
+        title: workout.value.title,
+        pictureURL: workout.value.picture,
+        location: workout.value.location,
+        distance: "0",
+        duration: workout.value.duration ,
+        timePosted: "Just now" 
+    })
+
+    workout.value = {
+        title: "",
+        date: "",
+        duration: "",
+        location: "",
+        picture: "",
+        type: ""
+    }
+
+    toggleForm()
+}
+
 </script>
 
 <template>
@@ -33,38 +67,38 @@ function toggleForm() {
                                     <div class="field">
                                         <label class="label">Title</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="">
+                                            <input class="input" v-model="workout.title" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Date</label>
                                         <div class="control">
-                                            <input class="input" type="date" placeholder="">
+                                            <input class="input" v-model="workout.date" type="date" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Duration</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="">
+                                            <input class="input" v-model="workout.duration" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Location</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="">
+                                            <input class="input" v-model="workout.location" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Picture</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="">
+                                            <input class="input" v-model="workout.picture" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Type</label>
                                         <div class="control">
                                             <div class="select is-fullwidth">
-                                                <select>
+                                                <select v-model="workout.type">
                                                     <option selected disabled hidden></option>
                                                     <option>Run</option>
                                                     <option>Bike</option>
@@ -75,11 +109,10 @@ function toggleForm() {
                                             </div>
                                         </div>
                                     </div>
-                                    
-
                                 </section>
+
                                 <footer class="modal-card-foot">
-                                    <button class="button is-success">Save changes</button>
+                                    <button @click.prevent="addWorkout" class="button is-success">Save changes</button>
                                     <button @click.prevent="toggleForm" class="button">Cancel</button>
                                 </footer>
                             </div>
@@ -95,7 +128,8 @@ function toggleForm() {
                                 :distance= 'user.distance'
                                 :title= 'user.title'
                                 :pictureURL= 'user.pictureURL'
-                                :profilePic= 'user.profilePic' />
+                                :profilePic= 'user.profilePic' 
+                                :timePosted="user.timePosted"/>
                         </div>
                     </div>
         </div>

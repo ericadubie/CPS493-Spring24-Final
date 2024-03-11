@@ -9,6 +9,7 @@ export interface User {
     location: string
     distance: string
     duration: string
+    timePosted: string
 }
 
 export function getUsers(): User[]{

@@ -16,7 +16,8 @@ const props = defineProps({
   pictureURL: String,
   location: String,
   distance: String,
-  duration: String
+  duration: String,
+  timePosted: String
 })
 </script>
 
@@ -31,7 +32,7 @@ const props = defineProps({
     <div class="media-content">
       <div class="content">
         <p>
-          <strong>{{ name }}</strong> <small>@{{username}}</small> <small>31m</small>
+          <strong>{{ name }}</strong> <small>@{{username}}</small> <small>{{timePosted}}</small>
           <br>
           {{ title }} - {{ location }}
         </p>

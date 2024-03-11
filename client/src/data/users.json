@@ -8,7 +8,8 @@
             "pictureURL": "https://picsum.photos/id/20/200/300",
             "location": "Rocky Mountains",
             "distance": "5.2",
-            "duration": "3600"
+            "duration": "3600",
+            "timePosted": "2 days ago"
         },
         {
             "name": "Jane Smith",
@@ -18,7 +19,8 @@
             "pictureURL": "https://picsum.photos/id/24/200/300",
             "location": "Malibu Beach",
             "distance": "1.5",
-            "duration": "1800"
+            "duration": "1800",
+            "timePosted": "1 week ago"
         },
         {
             "name": "Alex Johnson",
@@ -28,7 +30,8 @@
             "pictureURL": "https://picsum.photos/id/28/200/300",
             "location": "New York City",
             "distance": "3.0",
-            "duration": "7200"
+            "duration": "7200",
+            "timePosted": "3 months ago"
         }
     ],
     "total": 3,
