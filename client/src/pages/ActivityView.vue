@@ -33,31 +33,31 @@ function toggleForm() {
                                     <div class="field">
                                         <label class="label">Title</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="Text input">
+                                            <input class="input" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Date</label>
                                         <div class="control">
-                                            <input class="input" type="date" placeholder="Text input">
+                                            <input class="input" type="date" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Duration</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="Text input">
+                                            <input class="input" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Location</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="Text input">
+                                            <input class="input" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
                                         <label class="label">Picture</label>
                                         <div class="control">
-                                            <input class="input" type="text" placeholder="Text input">
+                                            <input class="input" type="text" placeholder="">
                                         </div>
                                     </div>
                                     <div class="field">
