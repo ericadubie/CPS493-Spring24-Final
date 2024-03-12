@@ -1,6 +1,6 @@
-import data from "../data/users.json"
+import data from "../data/activity.json"
 
-export interface User {
+export interface Activity {
     name: string
     username: string
     profilePic: string
@@ -12,6 +12,6 @@ export interface User {
     timePosted: string
 }
 
-export function getUsers(): User[]{
+export function getActivities(): Activity[]{
     return data.items;
   }
