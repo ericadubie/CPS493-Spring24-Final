@@ -2,6 +2,9 @@
 import ActivityCard from '../components/ActivityCard.vue'
 import { type Activity, getActivities } from '../model/activity'
 import { ref } from 'vue'
+import { getStoreUser } from "../global/users"
+
+const users = getStoreUser().users
 
 const activities = ref([] as Activity[])
 
@@ -26,7 +29,6 @@ function addWorkout() {
     activities.value.unshift({
         name: "EXAMPLE",
         username: "EXAMPLE",
-        profilePic: "EXAMPLE",
         title: workout.value.title,
         pictureURL: workout.value.picture,
         location: workout.value.location,
@@ -121,14 +123,14 @@ function addWorkout() {
 
                         <div v-for="(activity, index) in activities" :key="index">
                             <ActivityCard 
-                                :name= 'activity.name'
-                                :username= 'activity.username'
+                                :name="users.filter((user) => user.name === activity.name)[0].name"
+                                :username="users.filter((user) => user.name === activity.name)[0].username"
+                                :profilePic="users.filter((user) => user.name === activity.name)[0].profilePic"
                                 :location= 'activity.location'
                                 :duration= 'activity.duration' 
                                 :distance= 'activity.distance'
                                 :title= 'activity.title'
                                 :pictureURL= 'activity.pictureURL'
-                                :profilePic= 'activity.profilePic' 
                                 :timePosted="activity.timePosted"/>
                         </div>
                     </div>

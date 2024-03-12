@@ -3,7 +3,6 @@ import data from "../data/activity.json"
 export interface Activity {
     name: string
     username: string
-    profilePic: string
     title: string
     pictureURL: string
     location: string

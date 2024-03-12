@@ -5,7 +5,7 @@ interface User {
   username: string;
   id: number;
   isLoggedIn: boolean;
-  profilePicURL?: string;
+  profilePic?: string;
 }
 
 interface storeUser {
@@ -16,7 +16,7 @@ interface storeUser {
 export const getStoreUser = (): storeUser => {
   const users = reactive<User[]>([
       { name: "Erica Dubie", username: "edubz", id: 1, isLoggedIn: false },
-      { name: "Moshe Plotkin", username: "jewpaltz", id: 2, isLoggedIn: false, profilePicURL: "https://picsum.photos/id/1/200/300"},
+      { name: "Moshe Plotkin", username: "jewpaltz", id: 2, isLoggedIn: false, profilePic: "https://picsum.photos/id/1/200/300"},
       { name: "Ariana Grande", username: "queenari", id: 3, isLoggedIn: false }
   ]);
 
@@ -24,5 +24,5 @@ export const getStoreUser = (): storeUser => {
     users.push(user);
   };
 
-  return { users, addUser};
+  return { users, addUser };
 };

@@ -1,9 +1,8 @@
 {
     "items": [
         {
-            "name": "John Doe",
-            "username": "johndoe123",
-            "profilePic": "https://picsum.photos/id/2/200",
+            "name": "Erica Dubie",
+            "username": "edubz",
             "title": "Mountain Adventure",
             "pictureURL": "https://picsum.photos/id/20/200/300",
             "location": "Rocky Mountains",
@@ -12,9 +11,8 @@
             "timePosted": "2 days ago"
         },
         {
-            "name": "Jane Smith",
-            "username": "janesmith456",
-            "profilePic": "https://picsum.photos//id/4/200",
+            "name": "Moshe Plotkin",
+            "username": "jewpaltz",
             "title": "Sunset at the Beach",
             "pictureURL": "https://picsum.photos/id/24/200/300",
             "location": "Malibu Beach",
@@ -23,9 +21,8 @@
             "timePosted": "1 week ago"
         },
         {
-            "name": "Alex Johnson",
-            "username": "alexjohnson789",
-            "profilePic": "https://picsum.photos/id/6/200",
+            "name": "Ariana Grande",
+            "username": "queenari",
             "title": "City Lights Tour",
             "pictureURL": "https://picsum.photos/id/28/200/300",
             "location": "New York City",
