@@ -36,7 +36,11 @@ function toggleDropdown() {
 
             <div id="navbarBasicExample" :class=" { 'is-active': isActive } " class="navbar-menu">
                 <div class="navbar-start">
-                    <RouterLink to="/activity" class="navbar-item"> 
+                    <RouterLink to="/activity" class="navbar-item" v-if="storeUser.showLogin() !== undefined"> 
+                        My Activity
+                    </RouterLink>
+
+                    <RouterLink to="/login" class="navbar-item" v-else> 
                         My Activity
                     </RouterLink>
 

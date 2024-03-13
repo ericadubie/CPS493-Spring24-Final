@@ -12,6 +12,7 @@ interface storeUser {
   users: User[];
   addUser(user: User): void;
   userLogin(username: String): void;
+  showLogin(): User | undefined;
 }
 
 export const getStoreUser = (): storeUser => {
@@ -38,5 +39,9 @@ export const getStoreUser = (): storeUser => {
     })
   }
 
-  return { users, addUser, userLogin };
+  function showLogin() {
+    return users.find(user => user.isLoggedIn)
+  }
+
+  return { users, addUser, userLogin, showLogin };
 };
