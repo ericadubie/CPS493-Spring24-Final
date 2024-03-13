@@ -62,9 +62,9 @@ function toggleDropdown() {
                         </a>
 
                         <div class="navbar-dropdown">
-                            <a class="navbar-item">
+                            <RouterLink to="/users" class="navbar-item"> 
                                 Users
-                            </a>
+                            </RouterLink>
                         </div>
                     </div>
                 </div>
