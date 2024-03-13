@@ -5,8 +5,14 @@ import { getStoreUser } from '../global/users'
 const users = getStoreUser().users
 
 let isActive = ref(false);
+let isDropdown = ref(false);
+
 function toggleMenu() {
   isActive.value = !isActive.value;
+}
+
+function toggleDropdown() {
+  isDropdown.value = !isDropdown.value;
 }
 
 </script>
@@ -67,10 +73,10 @@ function toggleMenu() {
                             <!-- <a class="button is-light">
                                 Log in
                             </a> -->
-                            <div class="dropdown is-active">
-                                <div class="dropdown-trigger">
-                                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                                    <span>Dropdown button</span>
+                            <div class="dropdown" :class=" { 'is-active': isDropdown }">
+                                <div class="dropdown-trigger" @click="toggleDropdown">
+                                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" style="margin-right: 8px;">
+                                    <span>Log in</span>
                                     <span class="icon is-small">
                                         <i class="fas fa-angle-down" aria-hidden="true"></i>
                                     </span>
