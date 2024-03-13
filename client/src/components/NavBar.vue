@@ -54,7 +54,7 @@ const isAdmin = computed(() => {
                         Statistics
                     </a>
 
-                    <RouterLink to="/activity" class="navbar-item"> 
+                    <RouterLink to="/friends" class="navbar-item"> 
                         Friends
                     </RouterLink>
 
