@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { getStoreUser } from '../global/users';
     const { users } = getStoreUser();
+
 </script>
 
 <template>

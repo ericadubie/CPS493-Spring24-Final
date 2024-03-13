@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { getStoreUser } from '../global/users'
 
 const storeUser = getStoreUser()
@@ -15,6 +15,12 @@ function toggleMenu() {
 function toggleDropdown() {
   isDropdown.value = !isDropdown.value;
 }
+
+
+const isAdmin = computed(() => {
+    const user = storeUser.showLogin();
+    return user ? user.isAdmin : false;
+  });
 
 </script>
 
@@ -62,7 +68,10 @@ function toggleDropdown() {
                         </a>
 
                         <div class="navbar-dropdown">
-                            <RouterLink to="/users" class="navbar-item"> 
+                            <RouterLink to="/" class="navbar-item" v-if="storeUser.showLogin() === undefined || !isAdmin"> 
+                                Users
+                            </RouterLink>
+                            <RouterLink to="/users" class="navbar-item" v-else> 
                                 Users
                             </RouterLink>
                         </div>
