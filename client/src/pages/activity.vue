@@ -27,8 +27,8 @@ const workout = ref({
 
 function addWorkout() {
     activities.value.unshift({
-        name: "EXAMPLE",
-        username: "EXAMPLE",
+        name: users.filter((user) => user.isLoggedIn === true)[0].name,
+        username: users.filter((user) => user.isLoggedIn === true)[0].username,
         title: workout.value.title,
         pictureURL: workout.value.picture,
         location: workout.value.location,

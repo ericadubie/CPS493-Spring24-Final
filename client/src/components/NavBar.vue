@@ -2,7 +2,8 @@
 import { ref } from 'vue';
 import { getStoreUser } from '../global/users'
 
-const users = getStoreUser().users
+const storeUser = getStoreUser()
+const users = storeUser.users
 
 let isActive = ref(false);
 let isDropdown = ref(false);
@@ -43,9 +44,9 @@ function toggleDropdown() {
                         Statistics
                     </a>
 
-                    <a class="navbar-item">
+                    <RouterLink to="/activity" class="navbar-item"> 
                         Friends
-                    </a>
+                    </RouterLink>
 
                     <a class="navbar-item">
                         Search
@@ -69,10 +70,7 @@ function toggleDropdown() {
                         <div class="buttons">
                             <a class="button is-primary">
                                 <strong>Sign up</strong>
-                            </a>
-                            <!-- <a class="button is-light">
-                                Log in
-                            </a> -->
+                            </a> 
                             <div class="dropdown" :class=" { 'is-active': isDropdown }">
                                 <div class="dropdown-trigger" @click="toggleDropdown">
                                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu" style="margin-right: 8px;">
@@ -84,7 +82,7 @@ function toggleDropdown() {
                                 </div>
                                 <div class="dropdown-menu" id="dropdown-menu" role="menu">
                                     <div class="dropdown-content">
-                                    <a href="#" class="dropdown-item" v-for="(user, index) in users">
+                                    <a href="#" class="dropdown-item" v-for="(user, index) in users" @click="storeUser.userLogin(user.username)">
                                         {{ user.name }}
                                     </a>
                                     <hr class="dropdown-divider" />

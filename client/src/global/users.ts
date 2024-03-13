@@ -11,6 +11,7 @@ interface User {
 interface storeUser {
   users: User[];
   addUser(user: User): void;
+  userLogin(username: String): void;
 }
 
 export const getStoreUser = (): storeUser => {
@@ -24,5 +25,18 @@ export const getStoreUser = (): storeUser => {
     users.push(user);
   };
 
-  return { users, addUser };
+  function userLogin(username: string) {
+    users.forEach((user) => {
+      if(user.isLoggedIn === true && user.username !== username){
+        user.isLoggedIn = false
+        console.log(`${user.name} is logged out`)
+      }
+      if (user.username === username){
+        user.isLoggedIn = true
+        console.log(`${user.name} is logged in`)
+      }
+    })
+  }
+
+  return { users, addUser, userLogin };
 };
