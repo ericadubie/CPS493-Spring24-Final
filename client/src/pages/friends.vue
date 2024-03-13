@@ -53,10 +53,10 @@ function addWorkout() {
 
 <template>
     <div class="container">
-        <h1 class="title">My Activity</h1>
+        <h1 class="title">Friends Activity</h1>
         <div class="columns is-centered">
             <div class="column is-half media">
-                <button @click="toggleForm" class="button is-primary is-fullwidth">Add Workout</button>
+                <button @click="toggleForm" class="button is-primary is-fullwidth" style="margin-bottom: 20px;">Add Workout</button>
                 <form>
                     <div class="modal is-active" v-show="isVisible">
                         <div class="modal-background"></div>
