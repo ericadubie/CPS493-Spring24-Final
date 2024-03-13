@@ -13,6 +13,7 @@ interface storeUser {
   addUser(user: User): void;
   userLogin(username: String): void;
   showLogin(): User | undefined;
+  userLogout(): void;
 }
 
 export const getStoreUser = (): storeUser => {
@@ -39,9 +40,18 @@ export const getStoreUser = (): storeUser => {
     })
   }
 
+  function userLogout() {
+    users.forEach((user) => {
+      if(user.isLoggedIn === true){
+        user.isLoggedIn = false
+        console.log(`${user.name} is logged out`)
+      }
+    })
+  }
+
   function showLogin() {
     return users.find(user => user.isLoggedIn)
   }
 
-  return { users, addUser, userLogin, showLogin };
+  return { users, addUser, userLogin, showLogin, userLogout };
 };
