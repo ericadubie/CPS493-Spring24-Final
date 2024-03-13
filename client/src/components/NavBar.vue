@@ -68,7 +68,7 @@ const isAdmin = computed(() => {
                         </a>
 
                         <div class="navbar-dropdown">
-                            <RouterLink to="/" class="navbar-item" v-if="storeUser.showLogin() === undefined || !isAdmin"> 
+                            <RouterLink to="/login" class="navbar-item" v-if="storeUser.showLogin() === undefined || !isAdmin"> 
                                 Users
                             </RouterLink>
                             <RouterLink to="/users" class="navbar-item" v-else> 
