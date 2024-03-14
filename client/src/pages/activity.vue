@@ -12,8 +12,6 @@ const activities = ref([] as Activity[])
 
 const loggedInUser = computed(() => storeUser.showLogin());
 
-console.log("Logged in user:", loggedInUser.value);
-
 activities.value = getActivities()
 
 let isVisible = ref(false)
@@ -59,11 +57,9 @@ function addWorkout() {
 const userActivities = computed(() => {
   const user = loggedInUser.value;
   if (!user || !user.username){
-    console.log("No user logged in or username is missing.");
     return [];
   } 
   const filteredActivities = activities.value.filter(activity => activity.username === user.username);
-  console.log("Filtered activities for user:", filteredActivities);
   return filteredActivities;
 });
 
