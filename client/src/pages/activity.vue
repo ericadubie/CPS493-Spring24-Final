@@ -37,7 +37,7 @@ function addWorkout() {
         pictureURL: workout.value.picture,
         location: workout.value.location,
         distance: 0,
-        duration: workout.value.duration ,
+        duration: formatDuration(workout.value.duration),
         timePosted: "Just now",
         date: workout.value.date,
     })
@@ -53,6 +53,12 @@ function addWorkout() {
 
     toggleForm()
 }
+
+const formatDuration = (minutes: string) => {
+  const hours = Math.floor(parseInt(minutes) / 60);
+  const remainingMinutes = parseInt(minutes) % 60;
+  return `${hours.toString().padStart(2, '0')}:${remainingMinutes.toString().padStart(2, '0')}`;
+};
 
 const userActivities = computed(() => {
   const user = loggedInUser.value;

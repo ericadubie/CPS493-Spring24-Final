@@ -32,9 +32,10 @@ function addWorkout() {
         title: workout.value.title,
         pictureURL: workout.value.picture,
         location: workout.value.location,
-        distance: "0",
-        duration: workout.value.duration ,
-        timePosted: "Just now" 
+        distance: 0,
+        duration: formatDuration(workout.value.duration),
+        timePosted: "Just now",
+        date: workout.value.date,
     })
 
     workout.value = {
@@ -48,6 +49,12 @@ function addWorkout() {
 
     toggleForm()
 }
+
+const formatDuration = (minutes: string) => {
+  const hours = Math.floor(parseInt(minutes) / 60);
+  const remainingMinutes = parseInt(minutes) % 60;
+  return `${hours.toString().padStart(2, '0')}:${remainingMinutes.toString().padStart(2, '0')}`;
+};
 
 </script>
 
