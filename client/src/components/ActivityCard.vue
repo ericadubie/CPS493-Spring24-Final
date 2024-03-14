@@ -8,17 +8,17 @@ function toggleVisiblity() {
   isVisible.value = !isVisible.value
 }
 
-const props = defineProps({
-  name: String,
-  username: String,
-  profilePic: String,
-  title: String,
-  pictureURL: String,
-  location: String,
-  distance: String,
-  duration: String,
-  timePosted: String
-})
+const props = defineProps<{
+  name: string;
+  username: string;
+  profilePic: string | undefined;
+  title: string;
+  distance: number;
+  duration: string;
+  location: string;
+  pictureURL: string;
+  timePosted: string;
+}>();
 </script>
 
 <template>

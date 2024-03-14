@@ -6,9 +6,10 @@ export interface Activity {
     title: string
     pictureURL: string
     location: string
-    distance: string
+    distance: number
     duration: string
     timePosted: string
+    date: string
 }
 
 export function getActivities(): Activity[]{

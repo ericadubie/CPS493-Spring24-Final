@@ -38,9 +38,10 @@ function addWorkout() {
         title: workout.value.title,
         pictureURL: workout.value.picture,
         location: workout.value.location,
-        distance: "0",
+        distance: 0,
         duration: workout.value.duration ,
-        timePosted: "Just now" 
+        timePosted: "Just now",
+        date: workout.value.date,
     })
 
     workout.value = {
@@ -145,7 +146,7 @@ const userActivities = computed(() => {
                                 :profilePic="users.filter((user) => user.name === activity.name)[0].profilePic"
                                 :location= 'activity.location'
                                 :duration= 'activity.duration' 
-                                :distance= 'activity.distance'
+                                :distance= activity.distance
                                 :title= 'activity.title'
                                 :pictureURL= 'activity.pictureURL'
                                 :timePosted="activity.timePosted"/>
