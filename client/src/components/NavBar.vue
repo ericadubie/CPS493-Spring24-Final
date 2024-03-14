@@ -85,9 +85,9 @@ const isAdmin = computed(() => {
                 <div class="navbar-end">
                     <div class="navbar-item">
                         <div class="buttons">
-                            <a class="button is-primary" v-if="storeUser.showLogin() === undefined">
+                            <RouterLink to="/signup" class="button is-primary" v-if="storeUser.showLogin() === undefined">
                                 <strong>Sign up</strong>
-                            </a> 
+                            </RouterLink> 
 
                             <div class="user-info" v-else>
                                 <figure class="image is-48x48" style="margin-right: 8px;">
