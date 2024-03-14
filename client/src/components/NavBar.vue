@@ -23,9 +23,8 @@ const loggedInUser = computed(() => {
 
 
 const isAdmin = computed(() => {
-    const user = storeUser.showLogin();
-    return user ? user.isAdmin
-  });
+  return loggedInUser.value?.isAdmin;
+});
 
 </script>
 
