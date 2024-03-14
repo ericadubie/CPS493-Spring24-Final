@@ -47,7 +47,7 @@ const props = defineProps<{
                     <div class="heading"> DURATION </div>
                 </div>
                 <div class="column has-text-centered">
-                  <img :src="pictureURL" alt="Image Unavailable">
+                  <img :src="pictureURL" alt="Image Unavailable" class="main-picture">
                 </div>
         </div>
       </div>
@@ -80,5 +80,23 @@ const props = defineProps<{
 </template>
 
 <style scoped>
+
+.image.is-64x64 img {
+  object-fit: cover;
+  width: 64px; 
+  height: 64px;
+}
+
+.main-picture {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+media-content img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; 
+}
 
 </style>

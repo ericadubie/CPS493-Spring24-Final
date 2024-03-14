@@ -29,8 +29,8 @@ interface storeUser {
 
   function createInstance(): storeUser {
     const users = reactive<User[]>([
-        { name: "Erica Dubie", username: "edubz", id: 1, isLoggedIn: false, profilePic: "https://picsum.photos/id/14/200/300", isAdmin: true, emails: ["erica@example.com", "erica2@example.com"]},
-        { name: "Moshe Plotkin", username: "jewpaltz", id: 2, isLoggedIn: false, profilePic: "https://picsum.photos/id/1/200/300", isAdmin: false, emails: ["moshe@example.com"]},
+        { name: "Erica Dubie", username: "edubz", id: 1, isLoggedIn: false, profilePic: "https://picsum.photos/id/14/100/300", isAdmin: true, emails: ["erica@example.com", "erica2@example.com"]},
+        { name: "Moshe Plotkin", username: "jewpaltz", id: 2, isLoggedIn: false, profilePic: "https://picsum.photos/id/1/300/300", isAdmin: false, emails: ["moshe@example.com"]},
         { name: "Ariana Grande", username: "queenari", id: 3, isLoggedIn: false, profilePic: "https://picsum.photos/id/23/200/300", isAdmin: false, emails: ["ariana@example.com"] }
     ]);
 
