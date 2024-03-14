@@ -47,22 +47,27 @@ const isAdmin = computed(() => {
             <div id="navbarBasicExample" :class=" { 'is-active': isActive } " class="navbar-menu">
                 <div class="navbar-start">
                     <RouterLink to="/activity" class="navbar-item" v-if="storeUser.showLogin() !== undefined"> 
+                        <span class="icon is-small"><i class="fas fa-running"></i></span>
                         My Activity
                     </RouterLink>
 
                     <RouterLink to="/login" class="navbar-item" v-else> 
+                        <span class="icon is-small"><i class="fas fa-running"></i></span>
                         My Activity
                     </RouterLink>
 
                     <RouterLink to="/statistics" class="navbar-item"> 
+                        <span class="icon is-small"><i class="fas fa-chart-line"></i></span>
                         Statistics
                     </RouterLink>
 
                     <RouterLink to="/friends" class="navbar-item"> 
+                        <span class="icon is-small"><i class="fas fa-users"></i></span>
                         Friends
                     </RouterLink>
 
                     <RouterLink to="/search" class="navbar-item"> 
+                        <span class="icon is-small"><i class="fas fa-search"></i></span>
                         Search
                     </RouterLink>
 
@@ -150,4 +155,9 @@ const isAdmin = computed(() => {
     border-radius: 5%;
     max-height: max-content;
 }
+
+.navbar-item .icon {
+  margin-right: 0.25rem; /* Increase the right margin */
+}
+
 </style>
