@@ -54,17 +54,17 @@ const isAdmin = computed(() => {
                         My Activity
                     </RouterLink>
 
-                    <a class="navbar-item">
+                    <RouterLink to="/statistics" class="navbar-item"> 
                         Statistics
-                    </a>
+                    </RouterLink>
 
                     <RouterLink to="/friends" class="navbar-item"> 
                         Friends
                     </RouterLink>
 
-                    <a class="navbar-item">
+                    <RouterLink to="/search" class="navbar-item"> 
                         Search
-                    </a>
+                    </RouterLink>
 
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link">
