@@ -13,7 +13,7 @@ const props = defineProps<{
         <h2 class="title is-3">{{ title }}</h2>
         <div class="columns is-mobile is-multiline is-centered">
             <div class="column is-half-mobile">
-                <p class="value">{{ distance }} km</p>
+                <p class="value">{{ distance }} ft</p>
                 <p class="caption"><span class="icon is-small"><i class="fas fa-road"></i></span> Distance</p>
                 <p class="value">{{ avgPace ? avgPace : 0 }} mph</p>
                 <p class="caption"><span class="icon is-small"><i class="fas fa-tachometer-alt"></i></span> Avg Pace</p>
