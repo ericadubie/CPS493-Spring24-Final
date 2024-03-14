@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import ActivityCard from '../components/ActivityCard.vue'
 import { type Activity, getActivities } from '../model/activity'
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { getStoreUser } from "../global/users"
 
-const users = getStoreUser().users
+
+const storeUser = getStoreUser()
+const users = storeUser.users
 
 const activities = ref([] as Activity[])
+
+const loggedInUser = computed(() => storeUser.showLogin());
+
+console.log("Logged in user:", loggedInUser.value);
 
 activities.value = getActivities()
 
@@ -48,6 +54,17 @@ function addWorkout() {
 
     toggleForm()
 }
+
+const userActivities = computed(() => {
+  const user = loggedInUser.value;
+  if (!user || !user.username){
+    console.log("No user logged in or username is missing.");
+    return [];
+  } 
+  const filteredActivities = activities.value.filter(activity => activity.username === user.username);
+  console.log("Filtered activities for user:", filteredActivities);
+  return filteredActivities;
+});
 
 </script>
 
@@ -121,7 +138,7 @@ function addWorkout() {
                     </div>
                 </form>
 
-                        <div v-for="(activity, index) in activities" :key="index">
+                        <div v-for="(activity, index) in userActivities" :key="index">
                             <ActivityCard 
                                 :name="users.filter((user) => user.name === activity.name)[0].name"
                                 :username="users.filter((user) => user.name === activity.name)[0].username"

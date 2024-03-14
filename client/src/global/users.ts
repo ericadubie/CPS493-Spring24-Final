@@ -33,11 +33,11 @@ export const getStoreUser = (): storeUser => {
     users.forEach((user) => {
       if(user.isLoggedIn === true && user.username !== username){
         user.isLoggedIn = false
-        console.log(`${user.name} is logged out`)
+        // console.log(`${user.name} is logged out`)
       }
       if (user.username === username){
         user.isLoggedIn = true
-        console.log(`${user.name} is logged in`)
+        // console.log(`${user.name} is logged in`)
       }
     })
   }
