@@ -15,12 +15,12 @@ const props = defineProps<{
             <div class="column is-half-mobile">
                 <p class="value">{{ distance }} km</p>
                 <p class="caption"><span class="icon is-small"><i class="fas fa-road"></i></span> Distance</p>
-                <p class="value">{{ duration }} mins</p>
-                <p class="caption"><span class="icon is-small"><i class="fas fa-hourglass-half"></i></span> Duration</p>
-            </div>
-            <div class="column is-half-mobile">
                 <p class="value">{{ avgPace ? avgPace : 0 }} mph</p>
                 <p class="caption"><span class="icon is-small"><i class="fas fa-tachometer-alt"></i></span> Avg Pace</p>
+            </div>
+            <div class="column is-half-mobile">
+                <p class="value">{{ duration }} </p>
+                <p class="caption"><span class="icon is-small"><i class="fas fa-hourglass-half"></i></span> Duration</p>
                 <p class="value">{{ calories }}</p>
                 <p class="caption"><span class="icon is-small"><i class="fas fa-fire"></i></span> Calories</p>
             </div>
