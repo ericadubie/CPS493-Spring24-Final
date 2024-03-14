@@ -43,7 +43,7 @@ const props = defineProps<{
                     <div class="heading"> DISTANCE </div>
                 </div>
                 <div class="column has-text-centered">
-                    <div class="title"> {{ duration }} </div>
+                    <div class="title">{{ duration ? duration : "00:00" }}</div>
                     <div class="heading"> DURATION </div>
                 </div>
                 <div class="column has-text-centered">

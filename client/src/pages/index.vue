@@ -7,7 +7,11 @@
 
     const userStore = getStoreUser();
 
-    const activities = getActivities();
+    const users = userStore.users;
+
+    const activities = getActivities().filter(
+        (activity) => activity.name === userStore.showLogin()?.name
+    );
 
     // Utility Functions
     function parseDuration(duration: string) {
