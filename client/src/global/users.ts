@@ -13,17 +13,26 @@ interface User {
 interface storeUser {
   users: User[];
   addUser(user: User): void;
-  userLogin(username: String): void;
-  showLogin(): User | undefined;
+  userLogin(username: string): void; 
   userLogout(): void;
+  showLogin(): User | undefined;
 }
 
-export const getStoreUser = (): storeUser => {
-  const users = reactive<User[]>([
-      { name: "Erica Dubie", username: "edubz", id: 1, isLoggedIn: false, profilePic: "https://picsum.photos/id/14/200/300", isAdmin: true, emails: ["erica@example.com", "erica2@example.com"]},
-      { name: "Moshe Plotkin", username: "jewpaltz", id: 2, isLoggedIn: false, profilePic: "https://picsum.photos/id/1/200/300", isAdmin: false, emails: ["moshe@example.com"]},
-      { name: "Ariana Grande", username: "queenari", id: 3, isLoggedIn: false, profilePic: "https://picsum.photos/id/23/200/300", isAdmin: false, emails: ["ariana@example.com"] }
-  ]);
+  let userStoreinstance: storeUser | null = null;
+
+  export const getStoreUser = (): storeUser => {
+    if (userStoreinstance === null) {
+      userStoreinstance = createInstance();
+    }
+    return userStoreinstance;
+  };
+
+  function createInstance(): storeUser {
+    const users = reactive<User[]>([
+        { name: "Erica Dubie", username: "edubz", id: 1, isLoggedIn: false, profilePic: "https://picsum.photos/id/14/200/300", isAdmin: true, emails: ["erica@example.com", "erica2@example.com"]},
+        { name: "Moshe Plotkin", username: "jewpaltz", id: 2, isLoggedIn: false, profilePic: "https://picsum.photos/id/1/200/300", isAdmin: false, emails: ["moshe@example.com"]},
+        { name: "Ariana Grande", username: "queenari", id: 3, isLoggedIn: false, profilePic: "https://picsum.photos/id/23/200/300", isAdmin: false, emails: ["ariana@example.com"] }
+    ]);
 
   const addUser = (user: User) => {
     users.push(user);
@@ -40,7 +49,7 @@ export const getStoreUser = (): storeUser => {
         // console.log(`${user.name} is logged in`)
       }
     })
-  }
+  };
 
   function userLogout() {
     users.forEach((user) => {
@@ -49,11 +58,11 @@ export const getStoreUser = (): storeUser => {
         console.log(`${user.name} is logged out`)
       }
     })
-  }
+  };
 
   function showLogin() {
     return users.find(user => user.isLoggedIn)
-  }
+  };
 
   return { users, addUser, userLogin, showLogin, userLogout };
 };

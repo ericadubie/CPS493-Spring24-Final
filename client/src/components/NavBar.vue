@@ -16,10 +16,15 @@ function toggleDropdown() {
   isDropdown.value = !isDropdown.value;
 }
 
+const loggedInUser = computed(() => {
+  return storeUser.showLogin();
+  console.log("Logged In User: ", loggedInUser);
+});
+
 
 const isAdmin = computed(() => {
     const user = storeUser.showLogin();
-    return user ? user.isAdmin : false;
+    return user ? user.isAdmin
   });
 
 </script>
