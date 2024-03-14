@@ -31,8 +31,8 @@ const props = defineProps<{
 <style scoped>
 
 .summary {
-  background-color: #f0fbf8; /* A very light green, adjust the shade as needed */
-  border-left: 5px solid var(--bulma-primary, #00d1b2); /* Bulma primary color, with a fallback */
+  background-color: #f0fbf8;
+  border-left: 5px solid var(--bulma-primary, #00d1b2);
   padding: 1.5rem;
 }
 
@@ -56,7 +56,7 @@ const props = defineProps<{
 }
 
 .summary .caption .icon {
-  margin-right: 0.5rem; /* Space between the icon and the caption text */
+  margin-right: 0.5rem;
 }
 
 </style>
